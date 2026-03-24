@@ -6,12 +6,19 @@
  * Not gate:
  * if (in) out = 0, else out = 1
  */
+
+/* Feito por Lucas Menezes e Bruno Fellype;
+Disciplina de Elementos de Sistemas Computacionais
+Sistemas de Informação - UFRPE - 2026.1
+*/
+
 CHIP Not {
     IN in;
     OUT out;
 
     PARTS:
+    // Quando o NAND recebe o mesmo valor em 
+    // ambas entradas, tem o mesmo comportamento
+    // da porta NOT
     Nand(a=in , b=in , out=out);
-
-    //// Replace this comment with your code.
 }

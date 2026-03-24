@@ -6,14 +6,23 @@
  * Multiplexor:
  * if (sel = 0) out = a, else out = b
  */
+
+/* Feito por Lucas Menezes e Bruno Fellype;
+Disciplina de Elementos de Sistemas Computacionais
+Sistemas de Informação - UFRPE - 2026.1
+*/
+
 CHIP Mux {
     IN a, b, sel;
     OUT out;
 
     PARTS:
+    // Usando as portas AND, NOT e OR se cria um 
+    // comportamento de um seletor MUX que seleciona
+    // o valor da saída dependendo das entradas.
+    // 0 -> a;    1 -> b;
     Not(in=sel , out=notSel);
     And(a=a , b=notSel , out= selectA);
     And(a=b , b=sel , out=selectB);
     Or(a=selectA , b=selectB , out=out );
-    //// Replace this comment with your code.
 }

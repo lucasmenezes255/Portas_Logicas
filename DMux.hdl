@@ -7,13 +7,22 @@
  * [a, b] = [in, 0] if sel = 0
  *          [0, in] if sel = 1
  */
+
+/* Feito por Lucas Menezes e Bruno Fellype;
+Disciplina de Elementos de Sistemas Computacionais
+Sistemas de Informação - UFRPE - 2026.1
+*/
+
 CHIP DMux {
     IN in, sel;
     OUT a, b;
 
     PARTS:
+    // Porta inversa ao MUX. Seleciona para qual porta
+    // de saída o valor de entrada passará. Utiliza 
+    // apenas NOT e AND para ser criada.
+    // 0 -> a ;   1 -> b;
     Not(in=sel , out=notSel);
     And(a=in , b=notSel , out=a);
     And(a=in , b=sel , out=b);
-    //// Replace this comment with your code.
 }
