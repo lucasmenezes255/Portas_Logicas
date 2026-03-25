@@ -32,7 +32,7 @@ A partir da porata *`NAND`*, foram desenvolvidas as abstrações necessárias pa
   (*Hardware Definition Language*) É a linguagem de definição de Hardware. A sintaxe usada para implementar os chips e interconectar seus pinos.
 
 ## ✅ Como Validar
-  1. Abrir o <a> href='https://nand2tetris.github.io/web-ide/chip' >Nand to Tetris </a>
-  2. Carregar o arquivo *`.hdl`* da porta desejada
-  3. Carregar o arquivo de testes *`.tst`* correspondente
-  4. Executar o script
+  1. Abrir o <a href='https://nand2tetris.github.io/web-ide/chip' >Nand to Tetris </a>
+  3. Carregar o arquivo *`.hdl`* da porta desejada
+  4. Carregar o arquivo de testes *`.tst`* correspondente
+  5. Executar o script
