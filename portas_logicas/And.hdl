@@ -1,0 +1,24 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/1/And.hdl
+/**
+ * And gate:
+ * if (a and b) out = 1, else out = 0 
+ */
+
+/* Feito por Lucas Menezes e Bruno Fellype;
+Disciplina de Elementos de Sistemas Computacionais
+Sistemas de Informação - UFRPE - 2026.1
+*/
+
+CHIP And {
+    IN a, b;
+    OUT out;
+    
+    PARTS:
+    // Negando o NAND utilizá-se da ferramenta da 
+    // dupla negação e se obtém a porta AND
+    Nand(a=a , b=b , out=outNand);
+    Not(in=outNand , out=out );
+}
