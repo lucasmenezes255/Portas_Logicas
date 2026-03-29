@@ -60,7 +60,7 @@ A partir das portas construídas no projeto 1 é possível construir operadores 
   | **FullAdder** | *Caluca a soma de 2 bits com o carry. Recebe 3 bits, sendo 2 números e o outro sendo um carry de entrada `carry_in` e retorna a soma `sum` e um carry de saída `carry_out`* |
   | **Add16** | *Somador que utiliza `FullAdder` encadeados para calcular a soma de 2 bus de 16 bits* |
   | **Inc16** | *Operador que soma 1 unidade a um barramento de 16 bits de entrada* |
-  | **ULA** | *Unidade Lógica Aritmética, também chamda de ALU (acrônimo em inglês), que opera em 16 bits em notação complemento à 2 e executa uma de 18 funções definidas a partir de um conjunto de funções lógicas e aritméticas pré-definidas sobre 2 valores de entrada e retorna além da saída `out`, 2 valores `zr` para caso a saída seja 0 e `ng` para caso a saída seja um número negativo* |
+  | **ULA** | *Unidade Lógica Aritmética, também chamada de ALU (acrônimo em inglês), que opera em 16 bits em notação complemento à 2 e executa uma de 18 funções definidas a partir de um conjunto de funções lógicas e aritméticas pré-definidas sobre 2 valores de entrada e retorna além da saída `out`, 2 valores `zr` para caso a saída seja 0 e `ng` para caso a saída seja um número negativo* |
 
 [***↑ VOLTAR AO TOPO***](#topo)
 
