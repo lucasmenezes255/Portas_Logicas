@@ -51,7 +51,7 @@ A partir da porata *`NAND`*, foram desenvolvidas as abstrações necessárias pa
 ## 📦 Projeto 2 - Aritmética booleana
 A partir das portas construídas no projeto 1 é possível construir operadores aritméticos utilizando bits. Nesse projeto 2 foram implementados somadores aritméticos individuais e um somador de 16 bits, além de um incrementador de 16 bits e uma ULA (Unidade Lógica Aritmética).
 
-*Os arquivos `.hdl` das implementações do projeto 2 estão dispostas na pasta de [Aritmética Booleana](./projeto_02), assim como o **`arquivo .ZIP`** com todas as 5 implementações compactadas.*
+*Os arquivos `.hdl` das implementações do projeto 2 estão dispostas na pasta de [Aritmética Booleana](./projeto_02), assim como o **arquivo .ZIP** com todas as 5 implementações compactadas.*
 
 ### 🧰 **Implementações do Projeto 2**
   | Tipo | Função |
