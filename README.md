@@ -12,7 +12,7 @@ Este repositório documenta minha jornada através do projeto Nand2Tetris, que t
 
 [![Status P1](https://img.shields.io/badge/Projeto%201-Conclu%C3%ADdo-2E7D32?style=flat-square&labelColor=343A40)](./projeto_01)
 [![Status P2](https://img.shields.io/badge/Projeto%202-Conclu%C3%ADdo-2E7D32?style=flat-square&labelColor=343A40)](./projeto_02)
-[![Status P3](https://img.shields.io/badge/Projeto%203-Em%20andamento-6F42C1?style=flat-square&labelColor=343A40)]()
+[![Status P3](https://img.shields.io/badge/Projeto%203-Em%20andamento-6F42C1?style=flat-square&labelColor=343A40)]()  
 [![Status P4](https://img.shields.io/badge/Projeto%204-N%C3%A3o%20Iniciado-007ACC?style=flat-square&labelColor=343A40)]()
 [![Status P5](https://img.shields.io/badge/Projeto%205-N%C3%A3o%20Iniciado-005A9E?style=flat-square&labelColor=343A40)]()
 [![Status P6](https://img.shields.io/badge/Projeto%206-N%C3%A3o%20Iniciado-005A9E?style=flat-square&labelColor=343A40)]()
