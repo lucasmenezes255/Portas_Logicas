@@ -1,0 +1,26 @@
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/3/a/Bit.hdl
+/**
+ * 1-bit register:
+ * If load is asserted, the register's value is set to in;
+ * Otherwise, the register maintains its current value:
+ * if (load(t)) out(t+1) = in(t), else out(t+1) = out(t)
+ */
+
+/* Feito por Lucas Menezes;
+Disciplina de Elementos de Sistemas Computacionais
+Sistemas de Informação - UFRPE - 2026.1
+*/
+
+CHIP Bit {
+    IN in, load;
+    OUT out;
+
+    PARTS:
+    Mux(a=outMantido , b=in , sel=load , out=outMux);
+    //Flip-Flop tipo D (DFF) é a porta built-in que é 
+    //capaz de guardar um valor em memória 
+    DFF(in=outMux , out=outMantido, out=out);
+}
