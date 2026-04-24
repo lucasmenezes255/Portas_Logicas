@@ -1,0 +1,23 @@
+############ ESTRATÉGIA ADOTADA ############
+>> Utilizar um ponteiro para armazenar os endereços dos bits/pixels da tela. Chamado de tela_array.
+>> Ler constantemente o endereço 24576 ou KBD para identificar se tem ou não alguma tecla sendo pressionada
+>> Utilizar uma variável para definir a cor da tela: color
+    - Para cor branca o valor será 0. Pois 0000000000000000 é o branco
+    - Para cor preta o valor será -1. Pois dado a notação complemento a 2
+    -1 = 1111111111111111
+>> Atualizar cada pixel da tela com o valor da color até pintar toda a tela e reiniciar o programa
+
+############ PSEUDOCÒDIGO ############
+
+tela_array = SCREEN
+LOOP_RESTART
+    if KBD == 0
+        color = 0
+    else
+        color = -1
+    LOOP_PINTURA
+        if tela_array == KBD
+            LOOP_RESTART
+        else
+            RAM[tela_array] = color
+            tela_array = tela_array + 1

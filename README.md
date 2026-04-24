@@ -1,21 +1,21 @@
 <a name="topo"></a> 
 # 🧮 Nand to Tetris: Construindo um computador a partir do NAND
-Este repositório documenta minha jornada através do projeto Nand2Tetris, que tem como objetivo utilizar a porta *`NAND`* como porta primitiva e, gradativamente, construir portas lógicas mais complexas até compor um computador com hardware e software funcionais.
+Este repositório documenta minha jornada através do projeto Nand2Tetris, que tem como objetivo utilizar a porta *`NAND`* como porta primitiva e, gradativamente, construir portas lógicas mais complexas até compor um computador **Hack** com hardware e software funcionais.
 
 ## 🚀 Progresso dos módulos
 - [x] **Projeto 1** - *Lógica booleana*
 - [x] **Projeto 2** - *Aritmética booleana*
 - [x] **Projeto 3** - *Memória*
-- [ ] **Projeto 4** - *Linguagem de máquina*
+- [x] **Projeto 4** - *Linguagem de máquina*
 - [ ] **Projeto 5** - *Arquitetura computacional*
 - [ ] **Projeto 6** - *Assembler*
 
 [![Status P1](https://img.shields.io/badge/Projeto%201-Conclu%C3%ADdo-2E7D32?style=flat-square&labelColor=343A40)](./projeto_01)
 [![Status P2](https://img.shields.io/badge/Projeto%202-Conclu%C3%ADdo-2E7D32?style=flat-square&labelColor=343A40)](./projeto_02)
 [![Status P3](https://img.shields.io/badge/Projeto%203-Conclu%C3%ADdo-2E7D32?style=flat-square&labelColor=343A40)](./projeto_03/)  
-[![Status P4](https://img.shields.io/badge/Projeto%204-Em%20Andamento-6F42C1?style=flat-square&labelColor=343A40)](#topo)
-[![Status P5](https://img.shields.io/badge/Projeto%205-N%C3%A3o%20Iniciado-007ACC?style=flat-square&labelColor=343A40)](#topo)
-[![Status P6](https://img.shields.io/badge/Projeto%206-N%C3%A3o%20Iniciado-005A9E?style=flat-square&labelColor=343A40)](#topo)
+[![Status P4](https://img.shields.io/badge/Projeto%204-Conclu%C3%ADdo-2E7D32?style=flat-square&labelColor=343A40)](./projeto_04/4/)
+[![Status P5](https://img.shields.io/badge/Projeto%205-Em%20Andamento-6F42C1?style=flat-square&labelColor=343A40)](#topo)
+[![Status P6](https://img.shields.io/badge/Projeto%206-N%C3%A3o%20Iniciado-007ACC?style=flat-square&labelColor=343A40)](#topo)
 ## 📦 Projeto 1 - Portas Lógicas
 A partir da porata *`NAND`*, foram desenvolvidas as abstrações necessárias para criação de chips de lógica computacional, seletores e processamento de 16 bits, implementadas por 15 portas lógicas fundamentais dentro de um hardware. 
 
@@ -85,10 +85,50 @@ Nesse projeto 3 foram implementados Registrador de 1-bit (BIT), Registrador de 1
 
 [***↑ VOLTAR AO TOPO***](#topo)
 
+## **`>_`** Linguagem de Máquina
+Nesse projeto, explorei a linguagem de máquina do computador Hack, tendo contato com a famosa linguagem **Assembly** para construção da lógica de chips e manipulação de dados em memória. Para o projeto 4 foram implementados 2 algoritmos simples. Um **algoritmo algébrico** utilizando somas sucessivas e um **algoritmo interativo** que possui um funcionamento simples onde preenche a tela de preto se uma tecla for pressionada e preenche a tela de branco caso nenhuma tecla for pressionada.
+
+A partir desse módulo, o projeto passa a tratar das instruções que o processador recebe e como ele tratas essas instruções e de onde elas vem.
+
+| RAM | ROM |
+| :-: | :-: |
+| Memória de Acesso Randômico *(Random Acess Memory)*, parte da memória do sistema computacional utilizada para armazenar os dados | Memória Apenas de Leitura *(Read Only Memmory)*, parte na memória do sistema computacional reservada apenas para armazenar as instruções que o processador deve executar. Diferente da RAM, as informações da ROM não podem ser modificadas ou alteradas
+
+### Registradores
+- **Registrador Tipo A:** Registrador próximo da CPU capaz de armazenar tanto endereços quanto dados
+- **Registrador Tipo D:** Registrador também próximo a CPU capaz de armazenar somente dados
+- **Registrador Tipo M:** Registrador virtual que representa o valor referenciado pelo registrador A na memória RAM. **M = RAM[A]**
+
+### Instruções
+A CPU do Hack sabe qual a próxima instrução a ser executada por conta do PC que referencia o código que a CPU deve executar referente ao que está na ROM. As instruções de uma CPU são sequenciais, seguem a ordem que foi escrita. Existem 2 tipos de instruções:
+- **Instrução Tipo A:** Atribui ao registrador A o valor de $value$
+```
+  @value
+```
+- **Instrução Tipo C:** Computa uma operação $(comp)$, armazena um resultado $(dest)$ e é capaz de saltar para uma instrução no endereço **ROM[A]**
+```
+  dest = comp; jump
+```
+
+### Mapeamento de Memória
+A memória do Hack é mapeada da seguinte forma
+- **RAM[0] -> RAM[16383]:** Espaço de memória reservado para dados
+- **RAM[16384] -> RAM[24575]:** Espaço de memória reservado para a tela 512x255 *(SCREEN)* 
+- **RAM[24576]:** Espaço de memória reservado para o teclado *(KBD)*. O código das teclas seguem a **Tabela ASCII**
+### 🔣 Algoritmo Algébrico
+Consiste em realizar uma multiplicação simples de números nos endereços RAM[0] e RAM[1] e armazenar o resultado no endereço RAM[2].
+$$R2 = R0 * R1$$
+Esse algoritmo pode ser solucionado através de sucessivas somas e em seguida armazenar o resultado no endereço da RAM[2]
+
+### 🎨 Algoritmo Interativo
+Consiste uma interação do teclado e da tela do computador processados pela CPU, onde no caso de alguma tecla do teclado estiver pressionada, todos os pixels da tela são pintados na cor **PRETO** e no caso de nenhuma tecla estiver pressionada, os pixels da dela são pintados na cor **BRANCO**. Sendo utilizados **ponteiros** para percorrer os endereços dos pixels da tela.
+
+[***↑ VOLTAR AO TOPO***](#topo)
+
 ## ✅ Como Testar
   1. Abrir o [Nand to Tetris](https://nand2tetris.github.io/web-ide/chip)
-  2. Selecionar o projeto desejado
-  3. Carregar o arquivo *`.hdl`* da porta desejada
+  2. Selecionar o projeto desejado *(Caso queira testar o Projeto 4, acesse a aba CPU Emulator ou acesse [CPU](https://nand2tetris.github.io/web-ide/cpu))*
+  3. Carregar o arquivo *`.hdl`*
   4. Carregar o arquivo de testes *`.tst`* correspondente
   5. Executar o script
 

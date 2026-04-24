@@ -1,0 +1,16 @@
+############ ARTIFÍCIO ADOTADO ###########
+R2 = R0 * R1
+
+R0 * R1 = R0 + R0 + R0 + R0 + ... + R0 (R1 vezes)
+>> Estratégia para contabilizar cada soma: Utilizar R1 como iterador e reduzir 1 unidade a cada iteração
+
+############ PSEUDOCÒDIGO ############
+resultado_mult = 0
+LOOP
+    if R1 == 0 goto LOOP_END
+    else
+        resultado_mult = resultado_mult + R0
+        R1 = R1 - 1
+
+LOOP_END
+    R2 = resultado_mult
